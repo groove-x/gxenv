@@ -1,0 +1,18 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+    working_directory: ~/repository
+    steps:
+      - checkout
+      - run:
+          name: Setup dependencies
+          command: |
+            sudo apt install python3-stdeb python3-pytest
+      - run:
+          name: Test
+          command: |
+            python3 setup.py test
+
