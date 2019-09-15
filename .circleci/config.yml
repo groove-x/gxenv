@@ -13,6 +13,8 @@ jobs:
             sudo apt install python3-stdeb python3-pytest
       - run:
           name: Test
+          environment:
+            GXENV_TEST: yes
           command: |
             python3 setup.py test
 
