@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Setup dependencies
           command: |
-            sudo apt install python3-stdeb python3-pytest fakeroot
+            sudo apt install python3-stdeb python3-pytest python3-venv fakeroot
       - run:
           name: Test
           environment:
