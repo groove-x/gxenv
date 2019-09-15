@@ -16,7 +16,7 @@ jobs:
           environment:
             GXENV_TEST: yes
           command: |
-            python3 setup.py test
+            /usr/bin/python3 setup.py test
       - run:
           name: Debian package
           environment:
