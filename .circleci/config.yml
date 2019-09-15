@@ -17,10 +17,4 @@ jobs:
             GXENV_TEST: yes
           command: |
             /usr/bin/python3 setup.py test
-      - run:
-          name: Debian package
-          environment:
-            GXENV_TEST: yes
-          command: |
-            make deb
 
