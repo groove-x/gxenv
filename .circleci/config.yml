@@ -10,11 +10,17 @@ jobs:
       - run:
           name: Setup dependencies
           command: |
-            sudo apt install python3-stdeb python3-pytest
+            sudo apt install python3-stdeb python3-pytest fakeroot
       - run:
           name: Test
           environment:
             GXENV_TEST: yes
           command: |
             python3 setup.py test
+      - run:
+          name: Debian package
+          environment:
+            GXENV_TEST: yes
+          command: |
+            make deb
 
