@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 testing = os.environ.get('GXENV_TEST', None) is not None
-env_base = "/var/lib/python3/envs/"
+env_base = None
 
 if testing:
     env_base = "/tmp/"
@@ -29,6 +29,10 @@ if global_config.exists():
 
 if home_config.exists():
     load_config(home_config)
+
+if env_base is None:
+    print('WARNING: env base path is not configured. Falling back to /tmp. To change it, please create a config in ~/.config/gxenv/config.json or /etc/gxenv/config.json.')
+    env_base = '/tmp/'
 
 env_path_tmpl = env_base + "{}"
 test_env_name = "testenv"
