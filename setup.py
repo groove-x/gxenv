@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 version = "0.2.1"
 
 if os.environ.get('DEB', None):
-    kwargs = {'data_files': ("/usr/bin/", ["files/gxenv"])}
+    kwargs = {'data_files': [("/usr/bin/", ["files/gxenv"])]}
 else:
     kwargs = dict()
 
